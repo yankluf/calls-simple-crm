@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+    --body-font: "Lexend", system-ui;
+    --main-color: cadetblue;
+    --main-color-hover: rgba(95, 158, 160, 0.15);
+    --light-gray: #aaaaaa;
+    --light-gray-hover: rgba(171, 171, 171, 0.15);
+    --separators-color: #e6e6e6;
+
+}
+
+html {
+    font-family: var(--body-font);
+    background-color: whitesmoke;
+}
+
+body {
+    padding: 0 0;
+    margin: 0 0;
+    height: 100svh;
+    display: grid;
+    grid-template-columns: 13% 3fr;
+    grid-template-rows: 80px 1fr 30px;
+    grid-template-areas:
+        "sidebar header header ."
+        "sidebar main main ."
+        "sidebar footer footer footer";
+    overflow: hidden;
+    transition: all 250ms ease-out;
+}
+
+body > header {
+    grid-area: header;
+}
+
+body > aside {
+    grid-area: sidebar;
+    z-index: 5;
+}
+
+body > main {
+    grid-area: main;
+}
+
+body > footer {
+    grid-area: footer;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--light-gray);
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 2.3rem;
+}
+
+h2 {
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin: 0 0;
+    margin-bottom: 15px;
+}
+
+p, li {
+    color: var(--light-gray);
+}
+
+section.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.title #action-menu span {
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+section.title button {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family:  var(--body-font);
+    color: rgb(59, 59, 59);
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.747);
+    border-radius: 10px;
+    padding: 3px 15px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    border: 0;
+    /* border: 2px solid #1d5253; */
+    box-shadow: 0 0 8px -1px #0000003a;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+section.title button:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: left;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 0 20px -1px #00000011;
+}
+
+/* Style the table headers */
+th, td {
+    padding: 12px 15px;
+}
+
+/* Add a background color to the header */
+th {
+    height: 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 150px;
+}
+
+th:first-child {
+    border-top-left-radius: 16px;
+}
+
+th:last-child {
+    border-top-right-radius: 16px;
+}
+
+/* Add alternating row colors */
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+tr:first-child:hover {
+    background-color: white;
+}
+
+/* ---- FORMS ---- */
+
+form .form-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 0 20px -1px #00000011;
+    padding: 30px 30px;
+    margin-bottom: 25px;
+}
+
+form h3 {
+    width: 100%;
+    margin-bottom: 40px;
+    grid-column-start: span 2;
+}
+
+form .form-section .field {
+    width: 100%;
+}
+
+/** too specific to be in all the pages > fix adding class to html **/
+form .form-section:nth-of-type(2) .field:first-of-type > label {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+form .form-section:nth-of-type(2) .field:first-of-type {
+    grid-column-start: span 2;
+}
+
+form .form-section:nth-of-type(2) .field:last-of-type {
+    grid-column-start: span 2;
+}
+
+form .form-section:nth-of-type(3) .field:first-of-type {
+    grid-column-start: span 2;
+}
+
+form .form-section:nth-of-type(3) .field:nth-of-type(4) {
+    grid-row-start: span 0.5fr;
+}
+
+
+form .form-section input, form .form-section textarea, select {
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    font-weight: 300;
+    width: 90%;
+    padding: 9px 6px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 8px;
+}
+
+form .form-section input[type="radio"],
+form .form-section input[type="checkbox"],
+form .form-section input[type="time"],
+form .form-section input[type="date"]  {
+    width: auto;
+}
+
+
+form button{
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family:  var(--body-font);
+    height: fit-content;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 3px 15px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+    border: 0;
+    /* border: 2px solid #1d5253; */
+    box-shadow: 0 0 8px -1px #0000003a;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}

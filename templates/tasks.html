@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load template_tags %}
+{% block content %}
+
+<section class="title">
+    <h2>THINGS TO DO!</h2>
+    <div id="action-menu">
+        <!--span>Add task to:</span-->
+        <a href="/new-contact/"><button>Add contact</button></a>
+        <a href="/new-interaction/"><button>Add interaction</button></a>
+    </div>
+    
+</section>
+
+
+<table>
+    <tr>
+        <th>Task Name</th>
+        <th>Type</th>
+        <th>Do it on/before</th>
+        <th>Contact Name</th>
+        <th>Phone</th>
+        <th>Last Interaction</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{ task.name }}</td>
+        <td>{{ task.get_type_display }}</td>
+        <td>{{ task.deadline }}</td>
+        <td>{{ task.origin.contact }}</td>
+        <td>{{ task.origin.contact.phone|format_phone }}</td>
+        <td>{{ task.origin.date }} @ {{ task.origin.time}} ({{task.origin.get_type_display}})</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

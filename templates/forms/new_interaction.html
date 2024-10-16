@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="title">
+    <h2>NEW INTERACTION</h2>
+    <div id="action-menu" style="display: none;"> <!-- OJITO!! -->
+        <span>Add task to:</span>
+        <a href="/"><button>New contact</button></a>
+        <a href="/"><button>Existing contact</button></a>
+    </div>
+    
+</section>
+
+<form id="new-interaction" method="POST">
+    {% csrf_token %}
+
+    <div class="form-section">
+        <h3>Last interaction</h3>
+        
+        <div class="field">
+            <label for="{{ form.contact.id_for_label }}">Contact</label><br>
+            {{ form.contact }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.type.id_for_label }}">How did we get in touch?</label><br>
+            {{ form.type }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.date.id_for_label }}">Date</label><br>
+            {{ form.date }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.time.id_for_label }}">Time</label><br>
+            {{ form.time }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.description.id_for_label }}">What was it regarding?</label><br>
+            {{ form.description }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.needs_follow_up.id_for_label }}">Does it need follow up?</label><br>
+            {{ form.needs_follow_up }}
+        </div>
+    </div>
+
+    <div id="snippet-container" class="form-section">
+    </div>
+
+    <button type="submit">Save</button> <!-- Save and create following task // Also folow ups for follow ups (when DONE)-->
+
+</form>
+
+<p></p>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+<h3>Next step to do</h3>
+<div class="field">
+    <label for="{{ form.name.id_for_label }}">Task title</label><br>
+    {{ form.name }}
+</div>
+
+<div class="field">
+    <label for="{{ form.type.id_for_label }}">What it is?</label><br>
+    {{ form.type }}
+</div>
+
+<div class="field">
+    <label for="{{ form.is_follow_up.id_for_label }}">Is this task a follow up call/email?</label><br>
+    {{ form.is_follow_up }}
+</div>
+
+<div class="field">
+    <label for="{{ form.line_of_business.id_for_label }}">Line(s) of Business</label><br>
+    {{ form.line_of_business }}
+</div>
+
+<div class="field">
+    <label for="{{ form.deadline.id_for_label }}">Deadline</label><br>
+    {{ form.deadline }}
+</div>
+
+<div class="field">
+    <label for="{{ form.description.id_for_label }}">Description</label><br>
+    {{ form.description }}
+</div>
+
+<div class="field">
+    <label for="{{ form.time_sensitive.id_for_label }}">Is it time sensitive?</label><br>
+    {{ form.time_sensitive }}
+</div>
+
+<div class="field">
+    <label for="{{ form.approval_status.id_for_label }}">Does it need to be approved before being marked as completed?</label><br>
+    {{ form.approval_status }}
+</div>

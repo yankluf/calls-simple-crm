@@ -1,0 +1,16 @@
+footer#bottom-bar {
+    position: sticky;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--separators-color);
+    /*box-shadow: 0 2px 8px 0px #00000021;*/
+}
+
+footer#bottom-bar span {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: silver;
+}

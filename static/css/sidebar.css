@@ -1,0 +1,85 @@
+aside {
+    position: sticky;
+    bottom: 100%;
+    height: 100svh;
+    background-color: white;
+    box-shadow: 0 0 8px 0px #00000021;
+    padding-top: 10px;
+}
+
+aside #sidebar-content {
+    height: 100%;
+    transition: all 150ms ease-in-out 100ms;
+}
+
+aside#sidebar a#logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+aside#sidebar span#logo-title {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: cadetblue;
+}
+
+aside#sidebar span#logo-subtitle {
+    font-weight: 200;
+    font-size: 1.2rem;
+    margin-top: -8px;
+    color: silver;
+}
+
+nav#vertical-menu {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 111px);
+}
+
+nav#vertical-menu a.menu-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: calc(100% - 40px);
+    padding-left: 40px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav#vertical-menu a.menu-item:hover {
+    background-color: #5f9ea023;
+}
+
+nav#vertical-menu a.menu-item:nth-last-of-type(2) {
+    margin-top: auto;
+}
+
+nav#vertical-menu a.menu-item span {
+    font-weight: 300;
+    color: var(--main-color);
+    margin-left: 8px;
+}
+
+nav#vertical-menu svg path {
+    fill: var(--main-color);
+    stroke: transparent;
+}
+
+nav#vertical-menu a.menu-item.bottom:hover {
+    background-color: var(--light-gray-hover);
+}
+
+nav#vertical-menu a.menu-item.bottom span{
+    color: var(--light-gray)
+}
+
+nav#vertical-menu a.menu-item.bottom svg path {
+    fill: var(--light-gray);
+    stroke: transparent;
+}

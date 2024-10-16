@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="title">
+    <h2>NEW CONTACT</h2>
+    <div id="action-menu" style="display: none;"> <!-- OJITO!! -->
+        <span>Add task to:</span>
+        <a href="/"><button>New contact</button></a>
+        <a href="/"><button>Existing contact</button></a>
+    </div>
+    
+</section>
+
+<form id="new-contact" method="POST">
+    {% csrf_token %}
+
+    <div class="form-section">
+        <h3>Contact information</h3>
+
+        <div class="field">
+            <label for="{{ form.last_name.id_for_label }}">Last Name</label><br>
+            {{ form.last_name }}
+        </div>
+
+        <div class="field">
+            <label for="{{ form.first_name.id_for_label }}">First Name</label><br>
+            {{ form.first_name }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.phone.id_for_label }}">Phone</label><br>
+            {{ form.phone }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.email.id_for_label }}">Email</label><br>
+            {{ form.email }}
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h3>Last interaction</h3>
+
+        <div class="field">
+            <label for="{{ form.interaction_type.id_for_label }}">How did we get in touch?</label><br>
+            {{ form.interaction_type }}
+        </div>
+
+        <div class="field">
+            <label for="{{ form.interaction_date.id_for_label }}">Date</label><br>
+            {{ form.interaction_date }}
+        </div>
+
+        <div class="field">
+            <label for="{{ form.interaction_time.id_for_label }}">Time</label><br>
+            {{ form.interaction_time }}
+        </div>
+
+        <div class="field">
+            <label for="{{ form.interaction_description.id_for_label }}">What was it regarding?</label><br>
+            {{ form.interaction_description }}
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h3>Next step to do</h3>
+        
+        <div class="field">
+            <label for="{{ form.task_name.id_for_label }}">Task title</label><br>
+            {{ form.task_name }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.task_type.id_for_label }}">What it is?</label><br>
+            {{ form.task_type }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.task_deadline.id_for_label }}">Deadline</label><br>
+            {{ form.task_deadline }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.task_description.id_for_label }}">Description</label><br>
+            {{ form.task_description }}
+        </div>
+    
+        <div class="field">
+            <label for="{{ form.task_urgent.id_for_label }}">Is it urgent?</label><br>
+            {{ form.task_urgent }}
+        </div>
+    </div>
+
+    <button type="submit">Save</button> <!-- Save and create following task // Also folow ups for follow ups (when DONE)-->
+
+</form>
+
+<p></p>
+
+{% endblock content %}
